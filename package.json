@@ -1,0 +1,15 @@
+{
+  "name": "ez-store-node22-no-install",
+  "version": "2.0.0",
+  "private": true,
+  "description": "EZ-STORE with built-in Node.js 22 modules only; no npm install required",
+  "main": "server.js",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "setup": "node scripts/setup.js",
+    "start": "node server.js",
+    "check": "node --check server.js && node --check public/script.js && node --check admin/admin.js && node --check config/products.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {}
+}

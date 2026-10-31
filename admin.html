@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#090a20">
+    <title>
+      EZ-STORE | Admin
+    </title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/admin/admin.css">
+    <script src="/admin/admin.js" defer>
+    </script>
+  </head>
+  <body class="admin-body">
+    <header class="admin-top">
+      <a href="/" class="brand">
+        <span class="brand-bag">
+          ♧
+          <span class="bag-check">
+            ✓
+          </span>
+        </span>
+        <span>
+          EZ-
+          <span class="gradtext">
+            STORE
+          </span>
+        </span>
+      </a>
+      <span class="admin-caption">
+        INVENTORY MANAGEMENT
+      </span>
+      <a href="/" class="back-link">
+        ← Back to store
+      </a>
+    </header>
+    <main class="admin-main">
+      <section id="loginPanel" class="admin-login">
+        <div class="admin-glowicon">
+          ⬡
+        </div>
+        <span class="eyebrow">
+          STORE OWNER ACCESS
+        </span>
+        <h1>
+          Welcome Back
+        </h1>
+        <p>
+          Log in to add accounts and check stock. Prices cannot be edited here.
+        </p>
+        <form id="loginForm">
+          <label for="adminEmail">
+            Admin email
+          </label>
+          <input type="email" id="adminEmail" autocomplete="username" required placeholder="admin@example.com">
+          <label for="adminPassword">
+            Password
+          </label>
+          <input type="password" id="adminPassword" autocomplete="current-password" required placeholder="Your private admin password">
+          <p class="form-error hidden" id="loginError" role="alert">
+          </p>
+          <button type="submit" class="checkout-pay">
+            Sign In →
+          </button>
+        </form>
+      </section>
+      <section id="dashboard" class="dashboard hidden">
+        <div class="dashboard-top">
+          <div>
+            <span class="eyebrow">
+              EZ-STORE CONTROL PANEL
+            </span>
+            <h1>
+              Inventory
+              <span class="gradtext">
+                Dashboard
+              </span>
+            </h1>
+            <p>
+              ضيف الحسابات فقط • الأثمنة محددة فالكود ديال الموقع.
+            </p>
+          </div>
+          <button class="outline-button" id="logoutButton">
+            Log Out
+          </button>
+        </div>
+        <div class="stat-grid">
+          <article>
+            <span>
+              Total stored items
+            </span>
+            <strong id="statTotal">
+              0
+            </strong>
+            <small>
+              Maximum 10,000
+            </small>
+          </article>
+          <article>
+            <span>
+              Available now
+            </span>
+            <strong id="statAvailable">
+              0
+            </strong>
+            <small>
+              Visible to customers
+            </small>
+          </article>
+          <article>
+            <span>
+              Paid orders
+            </span>
+            <strong id="statOrders">
+              0
+            </strong>
+            <small>
+              Verified payments
+            </small>
+          </article>
+          <article>
+            <span>
+              Paid revenue
+            </span>
+            <strong id="statRevenue">
+              $0.00
+            </strong>
+            <small>
+              USD — excludes fees
+            </small>
+          </article>
+        </div>
+        <div class="admin-columns">
+          <section class="admin-card">
+            <div class="admin-card-head">
+              <span class="chip">
+                01 / ADD STOCK
+              </span>
+              <h2>
+                Add accounts / codes
+              </h2>
+              <p>
+                كل سطر كيمثل حساب واحد. يمكن إضافة حتى 10,000 حساب فالمجموع.
+              </p>
+            </div>
+            <form id="inventoryForm">
+              <label for="productSelect">
+                Product
+              </label>
+              <select id="productSelect" required>
+              </select>
+              <div class="info-box">
+                The product price is shown on the customer site and fixed in
+                <code>
+                  config/products.js
+                </code>
+                . This admin does not change prices.
+              </div>
+              <label for="accountLines">
+                Accounts (one per line)
+              </label>
+              <textarea id="accountLines" rows="10" spellcheck="false" placeholder="email1@example.com | password1&#10;email2@example.com | password2&#10;email3@example.com | password3" required>
+              </textarea>
+              <p class="form-hint">
+                <span id="lineCount">
+                  0
+                </span>
+                non-empty lines • duplicates are ignored • each item is encrypted in the database
+              </p>
+              <p class="form-error hidden" id="inventoryError" role="alert">
+              </p>
+              <p class="success-text hidden" id="inventorySuccess" role="status">
+              </p>
+              <button class="checkout-pay" type="submit" id="inventorySubmit">
+                + Add to inventory
+              </button>
+            </form>
+          </section>
+          <section class="admin-card">
+            <div class="admin-card-head">
+              <span class="chip">
+                02 / LIVE STOCK
+              </span>
+              <h2>
+                Products &amp; availability
+              </h2>
+              <p>
+                The stock updates automatically when orders are paid or items are added.
+              </p>
+            </div>
+            <div id="stockTable" class="stock-table">
+            </div>
+          </section>
+        </div>
+        <section class="admin-card inventory-browser">
+          <div class="admin-card-head">
+            <span class="chip">
+              03 / PRIVATE INVENTORY
+            </span>
+            <h2>
+              My saved accounts
+            </h2>
+            <p>
+              غير المالك يقدر يشوف الحسابات كاملة ويحيد الحسابات المتوفرة. الحسابات المحجوزة أو المباعة ما يمكنش حذفها.
+            </p>
+          </div>
+          <div class="inventory-toolbar">
+            <label for="savedProductSelect">
+              Choose product
+            </label>
+            <select id="savedProductSelect">
+            </select>
+            <button type="button" id="refreshSaved" class="outline-button">
+              Refresh accounts
+            </button>
+          </div>
+          <form id="bulkDeleteForm" class="bulk-delete-form">
+            <label for="bulkDeleteQuantity">
+              Delete how many available accounts?
+            </label>
+            <input id="bulkDeleteQuantity" type="number" min="1" max="10000" step="1" value="1" required>
+            <button id="bulkDeleteButton" type="submit" class="outline-button">
+              Delete selected quantity
+            </button>
+            <p id="bulkDeleteStatus" role="status" class="form-hint">
+            </p>
+          </form>
+          <p id="savedCount" class="form-hint">
+          </p>
+          <div id="savedAccounts" class="saved-accounts">
+          </div>
+          <div class="inventory-pages">
+            <button id="savedPrev" type="button" class="outline-button">
+              ← Previous
+            </button>
+            <span id="savedPage">
+              Page 1
+            </span>
+            <button id="savedNext" type="button" class="outline-button">
+              Next →
+            </button>
+          </div>
+          <p id="savedError" role="status">
+          </p>
+        </section>
+        <section class="admin-card orders-card">
+          <div class="admin-card-head">
+            <span class="chip">
+              04 / ORDERS
+            </span>
+            <h2>
+              Recent orders
+            </h2>
+            <p>
+              Order delivery status and tools to retry failed emails or verify a USDT TRC20 transfer manually.
+            </p>
+          </div>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    Order / Date
+                  </th>
+                  <th>
+                    Product
+                  </th>
+                  <th>
+                    Email
+                  </th>
+                  <th>
+                    Qty
+                  </th>
+                  <th>
+                    Total
+                  </th>
+                  <th>
+                    Payment
+                  </th>
+                  <th>
+                    Email
+                  </th>
+                  <th>
+                    Action
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="ordersTable">
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <div id="dashboardStatus" class="dashboard-status" role="status">
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

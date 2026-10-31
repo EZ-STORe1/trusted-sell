@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>
+      USDT TRC20 | EZ-STORE
+    </title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/usdt.js" defer>
+    </script>
+  </head>
+  <body style="background:#090d24;color:#fff;font-family:Arial,sans-serif">
+    <main style="max-width:650px;margin:65px auto;padding:24px;background:#151b39;border:1px solid #653ac5;border-radius:20px">
+      <a href="/" style="color:#a8c9ff">
+        ← EZ-STORE
+      </a>
+      <h1>
+        Pay with USDT (TRC20)
+      </h1>
+      <p>
+        <strong>
+          TRON network only.
+        </strong>
+        Sending on another network can permanently lose funds. This checkout uses manual verification; delivery is not instant.
+      </p>
+      <p>
+        Amount:
+        <strong id="amount">
+        </strong>
+        USDT
+      </p>
+      <p>
+        TRC20 receiving address:
+      </p>
+      <div id="wallet" style="overflow-wrap:anywhere;padding:16px;background:#090d24;border-radius:10px">
+      </div>
+      <p>
+        Order ID:
+        <span id="order">
+        </span>
+      </p>
+      <p>
+        After sending the exact amount, paste the transaction hash (TXID):
+      </p>
+      <form id="claimForm">
+        <input id="txid" required pattern="[A-Fa-f0-9]{64}" maxlength="64" placeholder="64-character transaction hash" style="width:100%;box-sizing:border-box;padding:14px;background:#090d24;color:white;border:1px solid #6554a8;border-radius:8px">
+        <button type="submit" class="checkout-pay" style="margin-top:15px">
+          Submit transaction for review
+        </button>
+      </form>
+      <p id="result" role="status">
+      </p>
+      <p>
+        We will email your items only after the store owner independently verifies the on-chain transfer. Keep your order ID.
+      </p>
+    </main>
+  </body>
+</html>

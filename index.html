@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="theme-color" content="#090a20">
+    <meta name="description" content="EZ-STORE digital gaming accounts and online services, live stock and secure checkout.">
+    <title>
+      EZ-STORE | Gaming & Digital Store
+    </title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js" defer>
+    </script>
+  </head>
+  <body>
+    <div class="topglow">
+    </div>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="EZ-STORE Home">
+        <span class="brand-bag">
+          ♧
+          <span class="bag-check">
+            ✓
+          </span>
+        </span>
+        <span>
+          EZ-
+          <span class="gradtext">
+            STORE
+          </span>
+        </span>
+      </a>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="#home" class="navlink active">
+          Home
+        </a>
+        <a href="#games" class="navlink">
+          Games
+        </a>
+        <a href="#social" class="navlink">
+          Social Media
+        </a>
+        <a href="#games" class="navlink">
+          Top Up
+        </a>
+        <a href="#about" class="navlink">
+          About
+        </a>
+      </nav>
+      <div class="header-actions">
+        <label class="search">
+          <span class="glass">
+          </span>
+          <input id="search" type="search" placeholder="Search games, accounts, top up..." aria-label="Search products">
+        </label>
+        <button class="cart-icon" type="button" id="cartInfo" title="Your current order" aria-label="Current selected order">
+          🛒
+          <span id="cartCount">
+            0
+          </span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </header>
+    <main id="home">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-showcase hero-showcase-left" aria-hidden="true">
+          <img src="/assets/gta-v.webp" alt="">
+          <span>
+            GTA V
+          </span>
+        </div>
+        <div class="hero-showcase hero-showcase-right" aria-hidden="true">
+          <img src="/assets/fortnite.webp" alt="">
+          <span>
+            FORTNITE
+          </span>
+        </div>
+        <div class="hero-neon hero-neon-left">
+        </div>
+        <div class="hero-neon hero-neon-right">
+        </div>
+        <div class="hero-content">
+          <span class="eyebrow">
+            <span class="eyebrow-dot">
+            </span>
+            YOUR NEXT DIGITAL ADVENTURE
+          </span>
+          <h1 id="hero-title">
+            YOUR GAMING &amp; DIGITAL
+            <strong>
+              STORE
+            </strong>
+          </h1>
+          <p>
+            Explore gaming accounts, digital products and social services. Great prices, live stock and secure checkout.
+          </p>
+          <div class="hero-pills">
+            <span>
+              <b>
+                ϟ
+              </b>
+              DIGITAL DELIVERY
+            </span>
+            <span>
+              <b>
+                ⬡
+              </b>
+              SECURE CHECKOUT
+            </span>
+            <span>
+              <b>
+                ♛
+              </b>
+              CLEAR PRICES
+            </span>
+          </div>
+          <a class="hero-cta" href="#games">
+            Explore Products
+            <span>
+              ↗
+            </span>
+          </a>
+        </div>
+      </section>
+      <div class="statusbar" id="storeNotice" aria-live="polite">
+        Live stock • Pick a product to see availability and price.
+      </div>
+      <section class="catalog-section" id="games">
+        <div class="section-heading">
+          <div class="heading-title">
+            <div class="heading-icon controller">
+              🎮
+            </div>
+            <div>
+              <h2>
+                Popular
+                <span class="gradtext">
+                  Games
+                </span>
+              </h2>
+              <p>
+                Game accounts, codes and more
+              </p>
+            </div>
+          </div>
+          <a href="#games" class="section-all" id="showGames">
+            View All Games
+            <span>
+              →
+            </span>
+          </a>
+        </div>
+        <div class="product-grid games-grid" id="gamesGrid" aria-live="polite">
+        </div>
+      </section>
+      <section class="catalog-section social-section" id="social">
+        <div class="section-heading">
+          <div class="heading-title">
+            <div class="heading-icon">
+              ♣
+            </div>
+            <div>
+              <h2>
+                Social Media &amp;
+                <span class="gradtext">
+                  Services
+                </span>
+              </h2>
+              <p>
+                Digital accounts and services
+              </p>
+            </div>
+          </div>
+          <a href="#social" class="section-all" id="showSocial">
+            View All Services
+            <span>
+              →
+            </span>
+          </a>
+        </div>
+        <div class="product-grid social-grid" id="socialGrid" aria-live="polite">
+        </div>
+      </section>
+      <section class="features" id="about" aria-label="Features">
+        <article>
+          <span class="feature-icon">
+            ϟ
+          </span>
+          <div>
+            <h3>
+              Digital Delivery
+            </h3>
+            <p>
+              Sent by email after payment
+            </p>
+          </div>
+        </article>
+        <article>
+          <span class="feature-icon">
+            ⬡
+          </span>
+          <div>
+            <h3>
+              Safe &amp; Secure
+            </h3>
+            <p>
+              USDT TRC20 payments reviewed before delivery
+            </p>
+          </div>
+        </article>
+        <article>
+          <span class="feature-icon">
+            ☏
+          </span>
+          <div>
+            <h3>
+              Order Support
+            </h3>
+            <p>
+              Track the order with its ID
+            </p>
+          </div>
+        </article>
+        <article>
+          <span class="feature-icon">
+            ☆
+          </span>
+          <div>
+            <h3>
+              Live Inventory
+            </h3>
+            <p>
+              Real stock, no overselling
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>
+        © 2026 EZ-STORE. All rights reserved.
+      </p>
+      <p>
+        Independent digital marketplace • Not officially affiliated with the displayed brands. Only sell items you own and are permitted to transfer.
+      </p>
+    </footer>
+    <div class="overlay hidden" id="checkoutOverlay" role="presentation">
+      <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+        <button class="modal-close" id="closeCheckout" aria-label="Close checkout">
+          ×
+        </button>
+        <span class="modal-kicker">
+          SECURE ORDER
+        </span>
+        <h2 id="checkoutTitle">
+          Complete your order
+        </h2>
+        <div class="chosen-product">
+          <span class="chosen-symbol" id="chosenSymbol">
+            ◎
+          </span>
+          <div>
+            <h3 id="chosenName">
+              Instagram
+            </h3>
+            <p id="chosenUnitPrice">
+              $1.00 / account
+            </p>
+          </div>
+          <span id="chosenStock" class="stock-pill">
+            In Stock
+          </span>
+        </div>
+        <form id="checkoutForm">
+          <label class="field-label" for="quantity">
+            How many items would you like?
+          </label>
+          <div class="quantity-input">
+            <button id="minusQty" type="button" aria-label="Decrease quantity">
+              −
+            </button>
+            <input type="number" id="quantity" min="1" max="10000" value="1" required inputmode="numeric">
+            <button id="plusQty" type="button" aria-label="Increase quantity">
+              +
+            </button>
+          </div>
+          <label class="field-label" for="buyerEmail">
+            Delivery email
+          </label>
+          <input id="buyerEmail" type="email" placeholder="yourname@email.com" maxlength="254" autocomplete="email" required>
+          <p class="field-help">
+            Your purchased items will be delivered to this email after confirmed payment.
+          </p>
+          <div class="order-summary">
+            <div>
+              <span>
+                Unit price
+              </span>
+              <strong id="summaryUnit">
+                $1.00
+              </strong>
+            </div>
+            <div>
+              <span>
+                Quantity
+              </span>
+              <strong id="summaryQty">
+                1
+              </strong>
+            </div>
+            <div class="summary-total">
+              <span>
+                Total (USD)
+              </span>
+              <strong id="summaryTotal">
+                $1.00
+              </strong>
+            </div>
+          </div>
+          <label class="field-label" for="paymentMethod">
+            Payment method
+          </label>
+          <select id="paymentMethod" style="width:100%;padding:14px;background:#121c39;color:white;border:1px solid #7042c4;border-radius:10px">
+            <option value="usdt">
+              USDT — TRC20 (TRON)
+            </option>
+          </select>
+          <p class="form-error hidden" id="checkoutError" role="alert">
+          </p>
+          <button class="checkout-pay" type="submit" id="payButton">
+            Continue with USDT TRC20
+            <span>
+              →
+            </span>
+          </button>
+          <p class="secure-foot">
+            🔒 Prices are calculated securely on the server. Never share passwords in chat.
+          </p>
+        </form>
+      </section>
+    </div>
+    <div class="toast hidden" id="toast" aria-live="assertive">
+    </div>
+  </body>
+</html>
